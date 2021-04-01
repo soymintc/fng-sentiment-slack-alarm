@@ -1,6 +1,7 @@
 .env
 *.log
 *.json
+backups
 kakaotalk
 *.png
 *kkt*
