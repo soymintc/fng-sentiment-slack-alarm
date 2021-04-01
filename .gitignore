@@ -1,0 +1,6 @@
+.env
+*.log
+*.json
+kakaotalk
+*.png
+*kkt*
