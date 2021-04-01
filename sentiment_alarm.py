@@ -38,9 +38,17 @@ if os.path.exists(log_file):
         log_data[date] = value
 today = datetime.today().strftime('%Y-%m-%d')
 
+flag_send_message = False
+if today in log_data: 
+    saved_out_text = log_data[today]
+    if saved_out_text != out_text: # updated out_text
+        flag_send_message = True
+else: # today data not previously saved
+    flag_send_message = True
+
 
 # Send slack messages
-if today not in log_data:
+if flag_send_message:
     env_path = Path(base_dir) / '.env'
     load_dotenv(dotenv_path=env_path)
     
